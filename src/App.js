@@ -1,34 +1,43 @@
 import HomePage from "./pages/homePage/HomePage";
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./components/header/Header";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import firebase, {
   auth,
   createUserProfileDoc,
 } from "./firebase-utils/firebase";
 import AuthenticationPage from "./pages/authenticationPage/AuthenticationPage";
+import { setCurrentUser } from "./redux/actions";
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const currentUser = useSelector((state) => state.currentUser);
   console.log(currentUser);
+  console.log("g");
+
+
+  const dispatch = useDispatch();
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       const userRef = await createUserProfileDoc(user);
       if (userRef) {
         userRef.onSnapshot((snapshot) => {
-          setCurrentUser({
-            id: snapshot.id,
-            ...snapshot.data(),
-          });
+          dispatch(
+            setCurrentUser({
+              id: snapshot.id,
+              ...snapshot.data(),
+            })
+          );
         });
+        return;
       }
-      setCurrentUser(user);
+      dispatch(setCurrentUser(user))
     });
   }, []);
   return (
     <div style={{ padding: "20px 5px" }}>
       <BrowserRouter>
-        <Header currentUser={currentUser} />
+        <Header/>
         <Route path="/" exact component={HomePage} />
         <Route path="/auth" exact component={AuthenticationPage} />
       </BrowserRouter>

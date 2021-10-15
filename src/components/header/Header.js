@@ -3,8 +3,10 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./header.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import { auth } from "../../firebase-utils/firebase";
+import { useSelector } from "react-redux";
 
-const Header = ({ currentUser }) => {
+const Header = () => {
+  const currentUser = useSelector((state) => state.currentUser);
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -18,7 +20,7 @@ const Header = ({ currentUser }) => {
           temp
         </Link>
 
-        {currentUser ? (
+        {currentUser? (
           <div className="option" onClick={() => auth.signOut()}>
             SignOut
           </div>
