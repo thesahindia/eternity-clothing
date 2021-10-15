@@ -2,13 +2,26 @@ import HomePage from "./pages/homePage/HomePage";
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import { useEffect, useState } from "react";
-import firebase, { auth } from "./firebase-utils/firebase";
+import firebase, {
+  auth,
+  createUserProfileDoc,
+} from "./firebase-utils/firebase";
 import AuthenticationPage from "./pages/authenticationPage/AuthenticationPage";
+
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
-
+  console.log(currentUser);
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(async (user) => {
+      const userRef = await createUserProfileDoc(user);
+      if (userRef) {
+        userRef.onSnapshot((snapshot) => {
+          setCurrentUser({
+            id: snapshot.id,
+            ...snapshot.data(),
+          });
+        });
+      }
       setCurrentUser(user);
     });
   }, []);

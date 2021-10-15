@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { auth, createUserProfileDoc } from "../../firebase-utils/firebase";
 import CustomButton from "../customButton/CustomButton";
 import Field from "../field/Field";
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    displayName: "",
     email: "",
     password: "",
   });
@@ -12,19 +13,33 @@ const SignUpForm = () => {
     const { value, name } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    const { displayName, email, password } = formData;
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      await createUserProfileDoc(user, { displayName });
+      setFormData({
+        displayName: "",
+        email: "",
+        password: "",
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div style={{ marginLeft: "20px", width: "40vw" }}>
       <h1>Sign up</h1>
       <form onSubmit={handleSubmit}>
         <Field
-          name="fullName"
+          name="displayName"
           label="Full Name"
           onChange={handleChange}
-          value={formData.fullName}
+          value={formData.displayName}
         />
         <Field
           name="email"

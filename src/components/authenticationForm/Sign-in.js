@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomButton from "../customButton/CustomButton";
 import Field from "../field/Field";
-import { signInWithGoogle } from "../../firebase-utils/firebase";
+import { auth, signInWithGoogle } from "../../firebase-utils/firebase";
 const SignInForm = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
@@ -9,9 +9,15 @@ const SignInForm = () => {
     const { value, name } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    const { email, password } = formData;
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setFormData({ email: "", password: "" });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div style={{ width: "30vw" }}>
