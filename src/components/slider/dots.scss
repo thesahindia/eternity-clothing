@@ -1,0 +1,23 @@
+.dot {
+    border: none;
+    border-radius: 100%;
+    margin: 2px;
+    padding: 3px;
+    background-color: white;
+    border: 1.5px solid rgba(0, 0, 0, 0.411);
+
+ &:hover {
+     cursor: pointer;
+     background-color: #ffe9a0e0;
+ }
+}
+
+
+
+.active {
+    background-color: #feaf00;
+
+    &:hover {
+        background-color: #feaf00;
+    }
+}

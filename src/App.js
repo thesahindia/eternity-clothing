@@ -12,9 +12,6 @@ import { setCurrentUser } from "./redux/actions";
 
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
-  console.log(currentUser);
-  console.log("g");
-
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -34,12 +31,15 @@ const App = () => {
       dispatch(setCurrentUser(user))
     });
   }, []);
+
   return (
     <div style={{ padding: "20px 5px" }}>
       <BrowserRouter>
         <Header/>
         <Route path="/" exact component={HomePage} />
         <Route path="/auth" exact component={AuthenticationPage} />
+      {/* <Route path="/categories/:category" component={} /> */}
+
       </BrowserRouter>
     </div>
   );

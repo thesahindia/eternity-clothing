@@ -53,7 +53,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           value={formData.password}
         />
-        <CustomButton size="medium">Submit</CustomButton>
+        <CustomButton btn="secondary">Submit</CustomButton>
       </form>
     </div>
   );

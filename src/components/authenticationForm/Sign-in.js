@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CustomButton from "../customButton/CustomButton";
 import Field from "../field/Field";
 import { auth, signInWithGoogle } from "../../firebase-utils/firebase";
+import {ReactComponent as GoogleLogo} from "../../assets/images/google.svg"
 const SignInForm = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
@@ -37,10 +38,10 @@ const SignInForm = () => {
           onChange={handleChange}
           value={formData.password}
         />
-        <CustomButton size="medium">Submit</CustomButton>
+        <CustomButton btn="secondary">Submit</CustomButton>
       </form>
-      <CustomButton onClick={signInWithGoogle} size="medium">
-        Log in with google
+      <CustomButton onClick={signInWithGoogle} color="rgb(220 74 55)" >
+       <GoogleLogo /> Log in with google
       </CustomButton>
     </div>
   );

@@ -4,7 +4,7 @@
       return action.payload;
 
     default:
-      return {};
+      return state;
   }
 };
 
