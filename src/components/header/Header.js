@@ -4,9 +4,12 @@ import "./header.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import { auth } from "../../firebase-utils/firebase";
 import { useSelector } from "react-redux";
+import CartIcon from "../cart/CartIcon";
+import CartDropdown from "../cart/CartDropdown";
 
 const Header = () => {
   const currentUser = useSelector((state) => state.currentUser);
+  console.log(currentUser);
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -20,7 +23,7 @@ const Header = () => {
           temp
         </Link>
 
-        {currentUser? (
+        {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SignOut
           </div>
@@ -29,7 +32,9 @@ const Header = () => {
             SignIn
           </Link>
         )}
+        <CartIcon/>
       </div>
+      <CartDropdown />
     </div>
   );
 };

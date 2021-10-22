@@ -12,7 +12,6 @@ const HomepageProductsPreview = ({ title, items }) => {
 
       <div className="preview">
         {items
-          .filter((item, inx) => inx < 5)
           .map(({ id, ...otherItemProps }) => (
             <ProductCard key={id} {...otherItemProps} />
           ))}

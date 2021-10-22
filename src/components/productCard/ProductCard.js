@@ -4,14 +4,19 @@ import CustomButton from "../customButton/CustomButton";
 import Rating from "./Rating";
 import { ReactComponent as CartIcon } from "../../assets/images/cart.svg";
 import Dots from "../slider/Dots";
-const ProductCard = ({ name, img, price, rating, sizes }) => {
+import {useDispatch} from 'react-redux'
+import { addToCart } from "../../redux/actions";
+
+const ProductCard = (productDetails) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [chosenSize, setChosenSize] = useState(null);
-  console.log(chosenSize)
+  const dispatch = useDispatch()
+  const { name, img, price, rating, sizes } = productDetails
 
   const indexClick = (index) => {
     setCurrentIndex(index);
   };
+
   const renderSizes = () => {
     return sizes.map((size) => (
       <button
@@ -23,6 +28,11 @@ const ProductCard = ({ name, img, price, rating, sizes }) => {
       </button>
     ));
   };
+
+  const handleClick = () => {
+    dispatch(addToCart(productDetails))
+  }
+
   return (
     <div className="item">
       <div className="img-container">
@@ -39,7 +49,7 @@ const ProductCard = ({ name, img, price, rating, sizes }) => {
         <Dots length={img.length} setIndex={indexClick} index={currentIndex} />
       </div>
       <div className="hover-info">
-        <CustomButton btn="primary">
+        <CustomButton btn="primary" onClick={handleClick}>
           <CartIcon style={{ padding: "0 3px 2px 0" }} /> Add to cart
         </CustomButton>
         <div className="sizes">Size: {renderSizes()} </div>

@@ -1,24 +1,43 @@
 .button {
+  font-family: 'Open Sans', sans-serif;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: large;
-  border-radius: 5px;
+  font-size: medium;
+  border-radius: 6px;
   border-style: none;
+  height:42px;
+  padding: 0px 13px 0px 13px;
+  color: white;
+  
 
-  &.full {
+  &.primary {
+    color: #000;
     width: 100%;
-    height: 45px;
-    padding: 12px;
+    height: 39px;
+    padding: 18px;
+    background-image: linear-gradient(to right, #ffb74b, #ffda82);
+
+    &:hover {
+      background-image: linear-gradient(to right, #ffb341, #ffd062);
+    }
+  }
+ 
+  &.secondary {
+    width: 130px;
+    background-image: linear-gradient(to right, #ffb039, #ffc439);
+
+    &:hover {
+      background-image: linear-gradient(to right, #fda829, #ffc02a);
+    }
+
   }
 
-  &.medium {
-    min-width: 100px;
-    height: 45px;
-  }
-
-  &:hover {
-    background-color: gray;
+  &:hover { 
+    cursor: pointer;
     border: none;
   }
 }
+
+ 

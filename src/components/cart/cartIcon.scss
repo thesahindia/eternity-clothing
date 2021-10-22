@@ -1,0 +1,11 @@
+.cart-icon {
+position: relative;
+    .item-count {
+        position: absolute;
+        left: 20px;
+        bottom: 9px;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}

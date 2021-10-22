@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 23px;
+  position: relative;
 
   .logo-container {
     width: 100px;
@@ -16,6 +17,7 @@
 
   .options {
     display: flex;
+    align-items: center;
 
     .option {
       margin-right: 25px;
