@@ -13,7 +13,7 @@ const HomepageProductsPreview = ({ title, items }) => {
       <div className="preview">
         {items
           .map(({ id, ...otherItemProps }) => (
-            <ProductCard key={id} {...otherItemProps} />
+            <ProductCard key={id} id={id} {...otherItemProps} />
           ))}
       </div>
     </div>

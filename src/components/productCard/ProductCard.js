@@ -7,12 +7,10 @@ import Dots from "../slider/Dots";
 import {useDispatch} from 'react-redux'
 import { addToCart } from "../../redux/actions";
 
-const ProductCard = (productDetails) => {
+const ProductCard = ({ id, name, img, price, rating, sizes } ) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [chosenSize, setChosenSize] = useState(null);
   const dispatch = useDispatch()
-  const { name, img, price, rating, sizes } = productDetails
-
   const indexClick = (index) => {
     setCurrentIndex(index);
   };
@@ -22,7 +20,7 @@ const ProductCard = (productDetails) => {
       <button
       key={size}
         onClick={() => setChosenSize(size)}
-        className={`size${chosenSize == size? "chosen" : ""}`}
+        className={`size${chosenSize === size? "chosen" : ""}`}
       >
         {size}
       </button>
@@ -30,7 +28,12 @@ const ProductCard = (productDetails) => {
   };
 
   const handleClick = () => {
-    dispatch(addToCart(productDetails))
+    if(!chosenSize) {
+      alert("You've not selected any size!!")
+      return ;
+    }
+    dispatch(addToCart({id, name, img, price,  selectedSize: chosenSize}))
+    setChosenSize(null)
   }
 
   return (
