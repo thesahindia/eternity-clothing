@@ -1,5 +1,5 @@
-import { ReactComponent as ShoppingBag } from "../../assets/images/bag.svg";
 import "./cartIcon.scss";
+import { ReactComponent as CartLogo } from "../../assets/images/cart2.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCartHidden } from "../../redux/actions";
 
@@ -22,7 +22,7 @@ const CartIcon = () => {
   
   return (
     <div className="cart-icon" onClick={handleClick}>
-      <ShoppingBag />
+      <CartLogo /> cart
       <span className="item-count">{cartItemCount()}</span>
     </div>
   );

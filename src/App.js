@@ -33,7 +33,7 @@ const App = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px 5px" }}>
+    <div>
       <BrowserRouter>
         <Header/>
         <Route path="/" exact component={HomePage} />

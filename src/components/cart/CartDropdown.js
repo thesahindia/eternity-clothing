@@ -9,7 +9,7 @@ import CartItem from "./CartItem";
 
 const CartDropdown = () => {
   const { isCartHidden, cartItems } = useSelector((state) => state.cart);
-  console.log(cartItems);
+
   const totalPrice = () => {
     if (cartItems.length) {
       return cartItems
@@ -24,7 +24,7 @@ const CartDropdown = () => {
 
   return (
     <div
-      style={{ visibility: isCartHidden ? " " : "hidden" }}
+      style={{ visibility: isCartHidden ? "hidden" : ""}}
       className="cart-dropdown"
     >
       {cartItems.length ? (

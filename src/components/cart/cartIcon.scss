@@ -1,11 +1,23 @@
 .cart-icon {
-position: relative;
+    padding-right: 35px;
+     position: relative;
+     color: white;
+
     .item-count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        background-color: #ffb538;
+        border-radius: 100%;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: -1px;  
         position: absolute;
-        left: 20px;
-        bottom: 9px;
-        color: white;
-        font-size: 13px;
-        font-weight: bold;
+        left: 25px;
+        bottom: 27px;
+
     }
+
 }
