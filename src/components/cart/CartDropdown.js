@@ -1,20 +1,33 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CustomButton from "../customButton/CustomButton";
 import { ReactComponent as CheckoutIcon } from "../../assets/images/checkout.svg";
 import { ReactComponent as SadFace } from "../../assets/images/sadFace.svg";
 
 import "./cartDropdown.scss";
 import CartItem from "./CartItem";
-import { selectCartItemsSubTotal } from "../../redux/reducers/cart/cartSelectors";
+import { selectCartItems, selectCartItemsSubTotal, selectIsCartHidden } from "../../redux/reducers/cart/cartSelectors";
+import { withRouter } from "react-router";
+import { toggleCartHidden } from "../../redux/actions";
+import { createStructuredSelector } from "reselect";
 
-const CartDropdown = () => {
-  const state = useSelector((state) => state);
-const {isCartHidden, cartItems} = state.cart
+const CartDropdown = ({ history }) => {
+ const {cartItems, isCartHidden, totalPrice} = useSelector(createStructuredSelector({
+   cartItems: selectCartItems,
+   isCartHidden: selectIsCartHidden,
+   totalPrice: selectCartItemsSubTotal
+ }))
+  const dispatch = useDispatch();
 
+  const handleClick = () => {
+    dispatch(toggleCartHidden());
+    history.push("/checkout");
+  };
+
+  
   return (
     <div
-      style={{ visibility: isCartHidden ? "hidden" : ""}}
+      style={{ visibility: isCartHidden ? "hidden" : "" }}
       className="cart-dropdown"
     >
       {cartItems.length ? (
@@ -31,13 +44,14 @@ const {isCartHidden, cartItems} = state.cart
             <div className="bottom">
               <span className="total">Total:</span>
               <span className="symbol">$</span>
-              <span className="price">{selectCartItemsSubTotal(state)}</span>
+              <span className="price">{totalPrice}</span>
             </div>
             <CustomButton
               btn="secondary"
               width="100%"
               height="45px"
               fontSize="large"
+              onClick={handleClick}
             >
               <i style={{ padding: "4px 4px 0 0" }}>
                 <CheckoutIcon />
@@ -57,4 +71,4 @@ const {isCartHidden, cartItems} = state.cart
     </div>
   );
 };
-export default CartDropdown;
+export default withRouter(CartDropdown);
