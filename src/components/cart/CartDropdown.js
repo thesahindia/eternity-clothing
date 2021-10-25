@@ -6,21 +6,11 @@ import { ReactComponent as SadFace } from "../../assets/images/sadFace.svg";
 
 import "./cartDropdown.scss";
 import CartItem from "./CartItem";
+import { selectCartItemsSubTotal } from "../../redux/reducers/cart/cartSelectors";
 
 const CartDropdown = () => {
-  const { isCartHidden, cartItems } = useSelector((state) => state.cart);
-
-  const totalPrice = () => {
-    if (cartItems.length) {
-      return cartItems
-        .map(
-          ({ price, quantity }) =>
-            (price.whole + "." + price.fraction) * quantity
-        )
-        .reduce((acc, currnt) => acc + currnt)
-        .toFixed(2);
-    }
-  };
+  const state = useSelector((state) => state);
+const {isCartHidden, cartItems} = state.cart
 
   return (
     <div
@@ -41,7 +31,7 @@ const CartDropdown = () => {
             <div className="bottom">
               <span className="total">Total:</span>
               <span className="symbol">$</span>
-              <span className="price">{totalPrice()}</span>
+              <span className="price">{selectCartItemsSubTotal(state)}</span>
             </div>
             <CustomButton
               btn="secondary"
