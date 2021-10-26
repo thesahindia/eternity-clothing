@@ -1,0 +1,45 @@
+.price-details {
+    width: 34%;
+    height: 300px;
+    margin-left: 3%;
+    background-color: white;
+    position: sticky;
+    top: 15px;
+
+    .head {
+        font-weight: 500;
+        color: #959595;
+        padding: 17px 18px;
+        border-bottom: 1px solid #f0f3f6;
+    }
+.price-detail-container {
+    padding: 0 30px;
+}
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin: 18px 0;
+
+    }
+
+    .total {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 21px 0;
+        margin: 0;
+        border-top: 1px dashed #e0e0e0;
+    }
+
+    .saved-amount {
+        font-size: 17px;
+        font-weight: 500;
+        color: #ffb039;
+        padding: 15px 0;
+        border-top: 1px dashed #e0e0e0;
+    }
+}
+
+
+.grey{
+    color: #939393;
+}

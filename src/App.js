@@ -9,6 +9,7 @@ import firebase, {
 } from "./firebase-utils/firebase";
 import AuthenticationPage from "./pages/authenticationPage/AuthenticationPage";
 import { setCurrentUser } from "./redux/actions";
+import checkoutPage from "./pages/checkout/CheckoutPage";
 
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
@@ -38,6 +39,8 @@ const App = () => {
         <Header/>
         <Route path="/" exact component={HomePage} />
         <Route path="/auth" exact component={AuthenticationPage} />
+        <Route path="/checkout" exact component={checkoutPage} />
+
       {/* <Route path="/categories/:category" component={} /> */}
 
       </BrowserRouter>

@@ -1,0 +1,45 @@
+.main-container {
+  width: 64%;
+  height: max-content;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 20%) 0px 1px 2px 0px;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 34px 20px 19px;
+    position: relative;
+
+    .left {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .right {
+      position: absolute;
+      top: 39px;
+      right: 41px;
+    }
+  }
+
+
+  .btn {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 22px;
+    box-shadow: rgb(0 0 0 / 10%) 0 -2px 5px 0;
+    background-color: white;
+  }
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  color: #878787c4;
+
+  .sad-face {
+    padding: 8px 0 0 6px;
+  }
+}
