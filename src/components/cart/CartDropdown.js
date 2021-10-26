@@ -6,16 +6,15 @@ import { ReactComponent as SadFace } from "../../assets/images/sadFace.svg";
 
 import "./cartDropdown.scss";
 import CartItem from "./CartItem";
-import { selectCartItems, selectCartItemsSubTotal, selectIsCartHidden } from "../../redux/reducers/cart/cartSelectors";
+import { selectCartItems, selectIsCartHidden } from "../../redux/reducers/cart/cartSelectors";
 import { withRouter } from "react-router";
 import { toggleCartHidden } from "../../redux/actions";
 import { createStructuredSelector } from "reselect";
 
 const CartDropdown = ({ history }) => {
- const {cartItems, isCartHidden, totalPrice} = useSelector(createStructuredSelector({
+ const {cartItems, isCartHidden} = useSelector(createStructuredSelector({
    cartItems: selectCartItems,
    isCartHidden: selectIsCartHidden,
-   totalPrice: selectCartItemsSubTotal
  }))
   const dispatch = useDispatch();
 
@@ -32,6 +31,7 @@ const CartDropdown = ({ history }) => {
     >
       {cartItems.length ? (
         <div>
+        <div className="cart-container">
           <div className="head">
             <span className="left">Shopping Cart</span>
             <span className="right">Price</span>
@@ -40,16 +40,13 @@ const CartDropdown = ({ history }) => {
             {cartItems.map(({ id, img, ...otherProps }) => (
               <CartItem key={id} img={img[0]} {...otherProps} />
             ))}
-            <hr className="cart-hr" />
-            <div className="bottom">
-              <span className="total">Total:</span>
-              <span className="symbol">$</span>
-              <span className="price">{totalPrice}</span>
-            </div>
+          </div>
+        </div>
+        <div className="bottom">
             <CustomButton
               btn="secondary"
               width="100%"
-              height="45px"
+              height="48px"
               fontSize="large"
               onClick={handleClick}
             >
@@ -58,7 +55,7 @@ const CartDropdown = ({ history }) => {
               </i>
               Checkout Now
             </CustomButton>
-          </div>
+            </div>
         </div>
       ) : (
         <div className="empty-cart">

@@ -1,9 +1,8 @@
 .cart-dropdown {
   position: absolute;
-  width: 370px;
-  padding: 34px 38px;
-  top: 113%;
-  right: 0px;
+  width: 442px;
+  top: 100%;
+  right: 18px;
   border-radius: 7px 0px 7px 7px;
   border: 1px solid #cbcbcba6;
   background-color: white;
@@ -24,22 +23,21 @@
     }
   }
 
+  .cart-container {
+    height: 423px;
+    padding: 24px 20px 0 35px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      visibility: hidden;
+  }
+  }
+  
   .bottom {
-    display: flex;
-    justify-content: right;
-    margin-bottom: 13px;
-    font-size: 18px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
-    .symbol {
-      font-size: 16px;
-      padding: 0 1px 0 4px;
-    }
-
-    .total {
-      font-weight: 500;
-      font-family: "Ubuntu", sans-serif;
-    }
+    padding: 20px 35px;
+    box-shadow: rgb(0 0 0 / 10%) 0 -2px 5px 0;
+    position: relative;
+    
   }
 }
 
@@ -47,6 +45,7 @@
   display: flex;
   justify-content: center;
   color: #878787c4;
+  padding: 51px 0px;
 
   .sad-face {
     padding: 8px 0 0 6px;
