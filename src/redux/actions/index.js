@@ -17,3 +17,18 @@ export const addToCart = (productDetails) => {
     payload: productDetails
   }
 }
+
+
+export const decreaseCartItemQuantity = (id) => {
+  return {
+    type: "DECREASE_QUANTITY",
+    payload: id
+  }
+}
+
+export const removeFromCart = (id) => {
+  return {
+    type: "REMOVE_ITEM",
+    payload: id
+  }
+}

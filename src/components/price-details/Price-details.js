@@ -14,7 +14,7 @@ export default function PriceDetails() {
     })
   );
 
-  const discount = ((30 / 100) * totalPrice).toFixed(2);
+  const discount = totalPrice<333?((30 / 100) * totalPrice).toFixed(2):100;
   const deliveryCharges = totalPrice>300? 0: 5 ;
   const totalAmount = (totalPrice - discount + deliveryCharges).toFixed(2);
   const savedAmount = (discount - deliveryCharges).toFixed(2);

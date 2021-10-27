@@ -26,7 +26,7 @@ export default function CheckoutCart() {
           </div>
           <div className="cart-items">
             {cartItems.map(({ id, img, ...otherProps }) => (
-              <CheckoutCartItem key={id} img={img[0]} {...otherProps} />
+              <CheckoutCartItem key={id} id={id} img={img[0]} {...otherProps} />
             ))}
           </div>
           <div className="btn">
