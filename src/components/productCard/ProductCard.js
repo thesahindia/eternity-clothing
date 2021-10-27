@@ -32,7 +32,7 @@ const ProductCard = ({ id, name, img, price, rating, sizes } ) => {
       alert("You've not selected any size!!")
       return ;
     }
-    dispatch(addToCart({id, name, img, price,  selectedSize: chosenSize}))
+    dispatch(addToCart({id:`${id}${chosenSize}`, name, img, price,  selectedSize: chosenSize}))
     setChosenSize(null)
   }
 
