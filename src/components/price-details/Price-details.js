@@ -27,24 +27,24 @@ export default function PriceDetails() {
           <span>
             Price({itemsCount} {itemsCount < 2 ? "Item" : "Items"})
           </span>
-          <span className="grey">${totalPrice}</span>
+          <span className="grey">	&#36;{totalPrice}</span>
         </div>
         <div className="discount row">
           <span>Discount</span>
-          <span style={{ color: "#ffb039" }}>
-            - ${discount}
+          <span style={{ color: "#ffb139" }}>
+            - 	&#36;{discount}
           </span>
         </div>
         <div className="delivery row">
           <span>Delivery Charges</span>
-          <span className="grey">${deliveryCharges}</span>
+          <span className="grey">	&#36;{deliveryCharges}</span>
         </div>
         <div className="total row">
           <span>Total Amount</span>
-          <span className="grey">${totalAmount}</span>
+          <span className="grey">	&#36;{totalAmount}</span>
         </div>
         <div className="saved-amount">
-            {savedAmount>0? <span>You will save ${savedAmount} on this order</span>: null}
+            {savedAmount>0? <span>You will save &#36;{savedAmount} on this order</span>: null}
           
         </div>
       </div>
