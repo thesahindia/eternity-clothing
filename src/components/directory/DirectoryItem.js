@@ -6,7 +6,7 @@ const DirectoryItem = ({ title, img, size, history, path }) => {
   return (
     <div
       className={`${size} directory-item`}
-      onClick={() => history.push(`categories${path}`)}
+      onClick={() => history.push(`collections${path}`)}
     >
       <div
         className="background-img"

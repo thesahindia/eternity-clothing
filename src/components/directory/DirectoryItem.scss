@@ -8,7 +8,7 @@
   border: 2px solid;
   margin: 0 7.5px 15px;
   overflow: hidden;
-  
+  position: relative;
 
   &:hover {
     cursor: pointer;
@@ -21,10 +21,15 @@
     & .content {
       opacity: 0.9;
     }
+
+    & .subtitle {
+      background-color: white;
+      color: black;
+    }
   }
 
   &.large {
-    height: 380px;
+    height: 340px;
   }
 
   .content {
@@ -32,22 +37,22 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: 0 25px;
-    height: 90px;
-    background-color: white;
-    opacity: 0.7;
     position: absolute;
+    opacity: 0.7;
+    color: white;
   }
   .title {
     font-weight: bold;
-    margin: 0 6px 0;
+    margin: 0;
     font-size: 22px;
-    color: #4a4a4a;
+    padding-bottom: 5px;
   }
 
   .subtitle {
-    font-weight: lighter;
     font-size: 16px;
+    border: 1px solid white;
+    padding: 7px 7px;
+    transition: all 0.7s ease;
   }
 
   .background-img {
@@ -55,5 +60,17 @@
     width: 100%;
     background-position: center;
     background-size: cover;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      opacity: 0.3;
+    }
   }
 }
