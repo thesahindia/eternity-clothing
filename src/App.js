@@ -10,6 +10,7 @@ import firebase, {
 import AuthenticationPage from "./pages/authenticationPage/AuthenticationPage";
 import { setCurrentUser } from "./redux/actions";
 import checkoutPage from "./pages/checkout/CheckoutPage";
+import CollectionPage from "./pages/collectionPage/CollectionPage";
 
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
@@ -29,20 +30,18 @@ const App = () => {
         });
         return;
       }
-      dispatch(setCurrentUser(user))
+      dispatch(setCurrentUser(user));
     });
   }, []);
 
   return (
     <div>
       <BrowserRouter>
-        <Header/>
+        <Header />
         <Route path="/" exact component={HomePage} />
         <Route path="/auth" exact component={AuthenticationPage} />
         <Route path="/checkout" exact component={checkoutPage} />
-
-      {/* <Route path="/categories/:category" component={} /> */}
-
+        <Route path="/collections/:collection" component={CollectionPage} />
       </BrowserRouter>
     </div>
   );
