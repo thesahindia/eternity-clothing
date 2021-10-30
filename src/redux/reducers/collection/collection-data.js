@@ -790,7 +790,6 @@ const COLLECTION_DATA = {
     ],
   },
 
-  
   "winter-collection": {
     id: 8,
     title: "Winter Collection",
@@ -813,7 +812,11 @@ const COLLECTION_DATA = {
         price: { whole: "21", fraction: "95" },
         sizes: ["S", "M", "L", "XL"],
         rating: 4.5,
-        img: [{ url: "hoodies/a.1.jpg" }, { url: "hoodies/a.2.jpg" }, { url: "hoodies/a.3.jpg" }],
+        img: [
+          { url: "hoodies/a.1.jpg" },
+          { url: "hoodies/a.2.jpg" },
+          { url: "hoodies/a.3.jpg" },
+        ],
       },
       {
         id: 41,
@@ -827,7 +830,7 @@ const COLLECTION_DATA = {
           { url: "jackets/a.3.jpg" },
         ],
       },
-    
+
       {
         id: 43,
         name: "Shirt Jacket with Hood",
@@ -844,14 +847,18 @@ const COLLECTION_DATA = {
         rating: 4,
         img: [{ url: "jackets/d.1.jpg" }, { url: "jackets/d.2.jpg" }],
       },
-   
+
       {
         id: 32,
         name: "Men's Athletic Hoodie",
         price: { whole: "20", fraction: "99" },
         sizes: ["S", "M", "L"],
         rating: 5,
-        img: [{ url: "hoodies/b.1.jpg" }, { url: "hoodies/b.2.jpg" }, { url: "hoodies/b.3.jpg" }],
+        img: [
+          { url: "hoodies/b.1.jpg" },
+          { url: "hoodies/b.2.jpg" },
+          { url: "hoodies/b.3.jpg" },
+        ],
       },
       {
         id: 33,
@@ -859,7 +866,7 @@ const COLLECTION_DATA = {
         price: { whole: "24", fraction: "33" },
         sizes: ["S", "M", "L", "XL"],
         rating: 4,
-        img: [{ url: "hoodies/c.1.jpg" },{ url: "hoodies/c.2.jpg" }],
+        img: [{ url: "hoodies/c.1.jpg" }, { url: "hoodies/c.2.jpg" }],
       },
       {
         id: 51,
@@ -873,7 +880,7 @@ const COLLECTION_DATA = {
         id: 34,
         name: "Champion Men's Pullover Hoodie",
         price: { whole: "31", fraction: "99" },
-        sizes: [ "M", "L", "XL"],
+        sizes: ["M", "L", "XL"],
         rating: 4,
         img: [{ url: "hoodies/d.1.jpg" }, { url: "hoodies/d.2.jpg" }],
       },
@@ -883,7 +890,11 @@ const COLLECTION_DATA = {
         price: { whole: "34", fraction: "20" },
         sizes: ["S", "L", "XL"],
         rating: 4.5,
-        img: [{ url: "hoodies/e.1.jpg" }, { url: "hoodies/e.2.jpg" }, { url: "hoodies/e.3.jpg" }],
+        img: [
+          { url: "hoodies/e.1.jpg" },
+          { url: "hoodies/e.2.jpg" },
+          { url: "hoodies/e.3.jpg" },
+        ],
       },
       {
         id: 50,
@@ -899,7 +910,7 @@ const COLLECTION_DATA = {
         price: { whole: "45", fraction: "00" },
         sizes: ["S", "M", "L", "XL"],
         rating: 4.5,
-        img: [{ url: "hoodies/f.1.jpg" },{ url: "hoodies/f.2.jpg" }],
+        img: [{ url: "hoodies/f.1.jpg" }, { url: "hoodies/f.2.jpg" }],
       },
       {
         id: 42,
@@ -919,7 +930,11 @@ const COLLECTION_DATA = {
         price: { whole: "23", fraction: "99" },
         sizes: ["S", "M", "L"],
         rating: 5,
-        img: [{ url: "hoodies/g.1.jpg" }, { url: "hoodies/g.2.jpg" }, { url: "hoodies/g.3.jpg" }],
+        img: [
+          { url: "hoodies/g.1.jpg" },
+          { url: "hoodies/g.2.jpg" },
+          { url: "hoodies/g.3.jpg" },
+        ],
       },
       {
         id: 38,
@@ -958,7 +973,7 @@ const COLLECTION_DATA = {
       },
 
       {
-        id: 76,
+        id: 78,
         name: "Men's Perfect Fit Shorts",
         price: { whole: "24", fraction: "99" },
         rating: 4.5,
@@ -1037,7 +1052,7 @@ const COLLECTION_DATA = {
       },
     ],
   },
-  
+
   "top-deals": {
     id: 10,
     title: "Top Deals",
@@ -1138,7 +1153,7 @@ const COLLECTION_DATA = {
           { url: "jackets/a.3.jpg" },
         ],
       },
- 
+
       {
         id: 26,
         name: "Men's Straight Fit Jeans",
@@ -1147,7 +1162,61 @@ const COLLECTION_DATA = {
         rating: 5,
         img: [{ url: "jeans/k.1.jpg" }, { url: "jeans/k.2.jpg" }],
       },
-      
+    ],
+  },
+
+  sponsored: {
+    id: 11,
+    title: "Sponsored Products",
+    products: [
+      {
+        id: 79,
+        name: "Men's Buck Camp Flannel Shirt",
+        price: { whole: "55", fraction: "98" },
+        sizes: ["S", "M", "L", "XL"],
+        rating: 5,
+        img: [
+          { url: "sponsored/a.1.jpg" },
+          { url: "sponsored/a.2.jpg" },
+          { url: "sponsored/a.3.jpg" },
+        ],
+      },
+      {
+        id: 80,
+        name: "Men's Cotton Casual Soft Shirt",
+        price: { whole: "52", fraction: "98" },
+        sizes: ["S", "M", "L", "XL"],
+        rating: 4.5,
+        img: [
+          { url: "sponsored/b.1.jpg" },
+          { url: "sponsored/b.2.jpg" },
+          { url: "sponsored/b.3.jpg" },
+        ],
+      },
+      {
+        id: 81,
+        name: "100% Cotton Casual Hawaiian Shirt",
+        price: { whole: "21", fraction: "99" },
+        rating: 4.5,
+        sizes: ["S", "M", "L", "XL"],
+        img: [
+          { url: "sponsored/c.1.jpg" },
+          { url: "sponsored/c.2.jpg" },
+          { url: "sponsored/c.3.jpg" },
+        ],
+      },
+      {
+        id: 82,
+        name: "Champion Men's Original Pullover Hoodie",
+        price: { whole: "47", fraction: "98" },
+        rating: 5,
+        sizes: ["S", "M", "L", "XL"],
+        img: [
+          { url: "sponsored/d.1.jpg" },
+          { url: "sponsored/d.2.jpg" },
+          { url: "sponsored/d.3.jpg" },
+        ],
+      },
     ],
   },
 };
