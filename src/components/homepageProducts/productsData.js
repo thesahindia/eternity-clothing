@@ -4,7 +4,7 @@ const PRODUCTS_DATA = [
     title: "Featured Products",
     items: [
       {
-        id: 44,
+        id: 47,
         name: "Casual Slim Fit Jacket",
         price: { whole: "39", fraction: "99" },
         sizes: ["S", "L", "XL"],
@@ -25,7 +25,7 @@ const PRODUCTS_DATA = [
       },
 
       {
-        id: 43,
+        id: 46,
         name: "Men's Denim Jacket",
         price: { whole: "44", fraction: "00" },
         sizes: ["S", "M", "L", "XL"],
@@ -64,7 +64,7 @@ const PRODUCTS_DATA = [
     title: "Latest Trends",
     items: [
       {
-        id: 49,
+        id: 52,
         name: "Levi' Sherpa Trucker Jacket",
         price: { whole: "57", fraction: "42" },
         sizes: ["M", "L", "XL"],
@@ -83,17 +83,17 @@ const PRODUCTS_DATA = [
         rating: 4.5,
         img: [{ url: "jeans/h.1.jpg" }, { url: "jeans/h.2.jpg" }],
       },
-      {
-        id: 5,
-        name: "Crew Neck T-Shirt",
-        price: { whole: "12", fraction: "66" },
+  {
+        id: 76,
+        name: "Men's Floral Hawaiian Shirt",
+        price: { whole: "22", fraction: "99" },
         rating: 4.5,
         sizes: ["S", "M", "L"],
-        img: [{ url: "t-shirts/e.1.jpg" }, { url: "t-shirts/e.2.jpg" }],
+        img: [{ url: "others/h.1.jpg" }, { url: "others/h.2.jpg" }],
       },
 
       {
-        id: 48,
+        id: 51,
         name: "Qulited Flanned Lined Jacket",
         price: { whole: "55", fraction: "00" },
         sizes: ["S", "M", "L", "XL"],
@@ -102,7 +102,7 @@ const PRODUCTS_DATA = [
       },
 
       {
-        id: 41,
+        id: 44,
         name: "Lightweight Bomber Jacket",
         price: { whole: "35", fraction: "99" },
         sizes: ["S", "M", "L", "XL"],

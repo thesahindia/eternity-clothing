@@ -32,6 +32,11 @@
     height: 340px;
   }
 
+  &.full {
+    margin: 0;
+    height: 100%;
+  }
+
   .content {
     display: flex;
     align-items: center;

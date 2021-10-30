@@ -1,0 +1,18 @@
+.collection-gallary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 250px 250px;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  padding: 30px 45px;
+}
+
+.item-0 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.item-3 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
