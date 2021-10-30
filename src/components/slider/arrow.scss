@@ -1,0 +1,22 @@
+.arrow-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+
+  .arrow {
+      color: white;
+    background-color: #dbdbdb;
+    font-size: 30px;
+    padding: 10px 13px;
+    border-radius: 100%;
+    margin: 0 10px;
+
+    &:hover {
+        cursor: pointer;
+    background-color: #afafaf;
+
+    }
+  }
+}
