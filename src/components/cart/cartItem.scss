@@ -28,42 +28,41 @@
       color:#141414ed;
 
       .name {
-        font-size: 18px;
-        width: 213px;
+        font-size: 17px;
+        width: 186px;
 
       }
 
       .price {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;        
         display: flex;
-        font-size: 18px;
         position: absolute;
         right: -5px;
         top: -8px;
 
         .symbol {
-          font-size: 18px;
+          font-size: 17px;
           color: grey;
         }
         .whole {
           padding-right: 1px;
           padding-left: 1px;
-          font-size: 23px;
+          font-size: 21px;
           color: #939393;
         }
         .fraction {
-          font-size: 14px;
+          font-size: 13px;
           color: #939393;
         }
       }
     }
     .qty {
-      margin: 1px 0px 4px 0px;
-      font-size: 16px;
+      margin: 2px 0px 4px 0px;
+      font-size: 15px;
 
     }
     .size {
-      font-size: 16px;
+      font-size: 15px;
 
     }
   }
@@ -72,5 +71,5 @@
   width: 90%;
   border: 0px;
   height: 1px;
-  background-image: linear-gradient(to right, #ffc02a, rgb(255 255 255 / 88%), #ffc02a);
+  background-color: rgba(126, 126, 126, 0.473);
 }

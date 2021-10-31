@@ -46,8 +46,8 @@ const CartDropdown = ({ history }) => {
             <CustomButton
               btn="secondary"
               width="100%"
-              height="48px"
-              fontSize="large"
+              height="45px"
+              fontSize="17px"
               onClick={handleClick}
             >
               <i style={{ padding: "4px 4px 0 0" }}>
