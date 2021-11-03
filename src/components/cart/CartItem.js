@@ -8,7 +8,7 @@ export default function CartItem({ name, img, price, selectedSize, quantity }) {
           className="img"
           style={{
             backgroundImage: `url(${
-              process.env.PUBLIC_URL + `images/${img.url}`
+              process.env.PUBLIC_URL + `/images/${img.url}`
             })`,
           }}
         ></div>
