@@ -4,13 +4,14 @@ import CustomButton from "../customButton/CustomButton";
 import Rating from "./Rating";
 import { ReactComponent as CartIcon } from "../../assets/images/cart.svg";
 import Dots from "../slider/Dots";
-import {useDispatch} from 'react-redux'
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions";
+import { withRouter } from "react-router-dom";
 
-const ProductCard = ({ id, name, img, price, rating, sizes } ) => {
+const ProductCard = ({ id, name, img, price, rating, sizes, history }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [chosenSize, setChosenSize] = useState(null);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const indexClick = (index) => {
     setCurrentIndex(index);
   };
@@ -18,9 +19,9 @@ const ProductCard = ({ id, name, img, price, rating, sizes } ) => {
   const renderSizes = () => {
     return sizes.map((size) => (
       <button
-      key={size}
+        key={size}
         onClick={() => setChosenSize(size)}
-        className={`size${chosenSize === size? "chosen" : ""}`}
+        className={`size${chosenSize === size ? "chosen" : ""}`}
       >
         {size}
       </button>
@@ -28,18 +29,29 @@ const ProductCard = ({ id, name, img, price, rating, sizes } ) => {
   };
 
   const handleClick = () => {
-    if(!chosenSize) {
-      alert("You've not selected any size!!")
-      return ;
+    if (!chosenSize) {
+      alert("You've not selected any size!!");
+      return;
     }
-    dispatch(addToCart({id:`${id}${chosenSize}`, name, img, price,  selectedSize: chosenSize}))
-    setChosenSize(null)
-  }
-
+    dispatch(
+      addToCart({
+        id: `${id}${chosenSize}`,
+        name,
+        img,
+        price,
+        selectedSize: chosenSize,
+      })
+    );
+    setChosenSize(null);
+  };
+  const onProductPreview = () => {
+    history.push(`/product/${id}`);
+  };
   return (
     <div className="item">
       <div className="img-container">
         <div
+          onClick={onProductPreview}
           className="item-img"
           style={{
             backgroundImage: `url(${
@@ -72,4 +84,4 @@ const ProductCard = ({ id, name, img, price, rating, sizes } ) => {
   );
 };
 
-export default ProductCard;
+export default withRouter(ProductCard);

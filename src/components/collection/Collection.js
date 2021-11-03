@@ -8,7 +8,7 @@ export default function Collection({ collectionToRender, collectionName }) {
     return (
       <div className="products-container">
         {collectionToRender.products.map(({ id, ...otherProps }) => (
-          <ProductCard key={id} {...otherProps} />
+          <ProductCard key={id} id={id} {...otherProps} />
         ))}
       </div>
     );

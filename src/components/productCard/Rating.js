@@ -1,6 +1,6 @@
 import React from "react";
 
-const Rating = ({ stars }) => {
+const Rating = ({ stars, height, width }) => {
   return (
     <div style={{ display: "flex" }}>
       <svg
@@ -9,8 +9,8 @@ const Rating = ({ stars }) => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        width="15px"
-        height="15px"
+        width={width ? width : "15px"}
+        height={height ? height : "15px"}
         viewBox="0 0 503.559 503.559"
         style={{ enableBackground: "new 0 0 503.559 503.559" }}
         xmlSpace="preserve"
@@ -38,8 +38,8 @@ const Rating = ({ stars }) => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        width="15px"
-        height="15px"
+        width={width ? width : "15px"}
+        height={height ? height : "15px"}
         viewBox="0 0 503.559 503.559"
         style={{ enableBackground: "new 0 0 503.559 503.559" }}
         xmlSpace="preserve"
@@ -67,8 +67,8 @@ const Rating = ({ stars }) => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        width="15px"
-        height="15px"
+        width={width ? width : "15px"}
+        height={height ? height : "15px"}
         viewBox="0 0 503.559 503.559"
         style={{ enableBackground: "new 0 0 503.559 503.559" }}
         xmlSpace="preserve"
@@ -96,8 +96,8 @@ const Rating = ({ stars }) => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        width="15px"
-        height="15px"
+        width={width ? width : "15px"}
+        height={height ? height : "15px"}
         viewBox="0 0 503.559 503.559"
         style={{ enableBackground: "new 0 0 503.559 503.559" }}
         xmlSpace="preserve"
@@ -124,8 +124,8 @@ const Rating = ({ stars }) => {
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        width="15px"
-        height="15px"
+        width={width ? width : "15px"}
+        height={height ? height : "15px"}
         viewBox="0 0 503.559 503.559"
         style={{ enableBackground: "new 0 0 503.559 503.559" }}
         xmlSpace="preserve"

@@ -11,6 +11,7 @@ import AuthenticationPage from "./pages/authenticationPage/AuthenticationPage";
 import { setCurrentUser } from "./redux/actions";
 import checkoutPage from "./pages/checkout/CheckoutPage";
 import CollectionPage from "./pages/collectionPage/CollectionPage";
+import ProductPage from "./pages/productPage/ProductPage";
 
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
@@ -42,6 +43,7 @@ const App = () => {
         <Route path="/auth" exact component={AuthenticationPage} />
         <Route path="/checkout" exact component={checkoutPage} />
         <Route path="/collections/:collection" component={CollectionPage} />
+        <Route path="/product/:productId" component={ProductPage} />
       </BrowserRouter>
     </div>
   );

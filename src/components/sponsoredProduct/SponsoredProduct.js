@@ -2,13 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectCollection } from "../../redux/reducers/collection/collection.selectors";
 import CustomButton from "../customButton/CustomButton";
+import { withRouter } from "react-router";
 import "./sponsoredProduct.scss";
 
-export default function SponsoredProduct() {
+const SponsoredProduct = ({ history }) => {
   const state = useSelector((state) => state);
   const { products } = selectCollection("sponsored")(state);
   const product = products[Math.floor(Math.random() * 4)];
 
+  const handleClick = () => {
+    history.push(`/product/${product.id}`);
+  };
   return (
     <div className="parant-container">
       <div className="product-container">
@@ -29,7 +33,12 @@ export default function SponsoredProduct() {
           <div className="name">Levi's Men's Casual Light Shirt </div>
           <div className="price">$34.99</div>
           <div>
-            <CustomButton btn="primary" height={32} fontSize="small">
+            <CustomButton
+              btn="primary"
+              height={32}
+              fontSize="small"
+              onClick={handleClick}
+            >
               Buy Now
             </CustomButton>
           </div>
@@ -38,4 +47,6 @@ export default function SponsoredProduct() {
       <div className="txt">Sponsored</div>
     </div>
   );
-}
+};
+
+export default withRouter(SponsoredProduct);
