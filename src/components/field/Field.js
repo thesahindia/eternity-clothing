@@ -1,10 +1,10 @@
 import React from "react";
 import "./field.scss";
-const Field = ({ label, ...otherInputProps }) => {
+const Field = ({ label, placeholder, ...otherInputProps }) => {
   return (
     <div className="fieldContainer">
-      <input className="input" {...otherInputProps} placeholder=" " />
       {label ? <label className="label">{label}</label> : null}
+      <input className="input" autoComplete="off" {...otherInputProps} placeholder={placeholder} />
     </div>
   );
 };

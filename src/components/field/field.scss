@@ -1,27 +1,21 @@
 .fieldContainer {
   position: relative;
-  margin: 45px 0;
+  margin: 30px 0;
 
   .label {
-    font-size: 16px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    color: grey;
-    transition: 300ms ease all;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   .input {
-    border: none;
-    background: none;
-    color: gray;
+    width: 350px;
     display: block;
-    padding: 10px 10px 10px 5px;
-    border-bottom: 1px solid grey;
-    font-size: 18px;
-    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-top: 5px;
+    background-color: transparent;
 
     &:focus {
       outline: none;
@@ -29,9 +23,4 @@
   }
 }
 
-.input:focus ~ .label,
-.input:not(:placeholder-shown).input:not(:focus) ~ .label {
-  top: -14px;
-  font-size: 12px;
-  color: black;
-}
+

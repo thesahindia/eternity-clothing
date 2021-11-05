@@ -1,5 +1,5 @@
 import HomePage from "./pages/homePage/HomePage";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import Header from "./components/header/Header";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -40,10 +40,15 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Route path="/" exact component={HomePage} />
-        <Route path="/auth" exact component={AuthenticationPage} />
         <Route path="/checkout" exact component={checkoutPage} />
         <Route path="/collections/:collection" component={CollectionPage} />
         <Route path="/product/:productId" component={ProductPage} />
+        <Route
+              exact
+              path='/auth'
+              render={() =>
+                currentUser ? <Redirect to='/' /> : <AuthenticationPage />
+              } />
       </BrowserRouter>
     </div>
   );
