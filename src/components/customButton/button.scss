@@ -5,11 +5,8 @@
   font-size: medium;
   border-radius: 6px;
   border-style: none;
-  height:42px;
   padding: 0px 13px 0px 13px;
   color: white;
-  font-family: 'Ubuntu', sans-serif;
-  
 
   &.primary {
     color: #000;
@@ -22,21 +19,32 @@
       background-image: linear-gradient(to right, #ffb341, #ffd062);
     }
   }
- 
+
   &.secondary {
-    width: 130px;
     background-image: linear-gradient(to right, #ffb039, #ffc439);
 
     &:hover {
       background-image: linear-gradient(to right, #fda829, #ffc02a);
     }
-
   }
 
-  &:hover { 
+  &.red {
+    background-color: rgb(220 74 55);
+
+    &:hover {
+      background-color: rgb(219 63 42);
+    }
+  }
+
+  &.grey {
+    background-color: #d5d5d5;
+
+    &:hover {
+      background-color: rgb(204, 204, 204);
+    }
+  }
+  &:hover {
     cursor: pointer;
     border: none;
   }
 }
-
- 

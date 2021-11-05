@@ -123,10 +123,11 @@ const ProductPreview = ({ productDetails, id, history }) => {
               btn="secondary"
               width="126px"
               height="40px"
+              shadow="true"
             >
               Buy Now
             </CustomButton>
-            <CustomButton onClick={onAddToCart}>
+            <CustomButton btn="grey" shadow="true" onClick={onAddToCart}>
               <CartIcon />
             </CustomButton>
           </div>

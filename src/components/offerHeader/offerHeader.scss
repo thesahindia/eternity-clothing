@@ -1,10 +1,15 @@
 .offer-header {
-  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
   background-image: linear-gradient(180deg, #ff81c6, #ff2b9f);
-  text-align: center;
+  background-color: rgb(184, 184, 184);
   color: white;
   box-shadow: 0 2px 4px #0000002b;
-  padding: 5px 0 12px 0;
-  margin: 0 0 10px 0;
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+  font-weight: 500;
   font-size: 14px;
+  position: relative;
 }
