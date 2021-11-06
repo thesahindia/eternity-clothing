@@ -33,7 +33,7 @@ const Header = () => {
             SignOut
           </div>
         ) : (
-          <Link to="/auth" className="option">
+          <Link to="/signin" className="option">
             SignIn
           </Link>
         )}

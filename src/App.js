@@ -44,12 +44,14 @@ const App = () => {
         <Route path="/collections/:collection" component={CollectionPage} />
         <Route path="/product/:productId" component={ProductPage} />
         <Route
-              exact
-              path='/auth'
-              render={() =>
-                currentUser ? <Redirect to='/' /> : <AuthenticationPage />
-              } />
+          exact
+          path="/signin"
+          render={() =>
+            currentUser ? <Redirect to="/" /> : <AuthenticationPage />
+          }
+        /> 
       </BrowserRouter>
+     
     </div>
   );
 };
