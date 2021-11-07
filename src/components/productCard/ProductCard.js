@@ -21,7 +21,7 @@ const ProductCard = ({ id, name, img, price, rating, sizes, history }) => {
       <button
         key={size}
         onClick={() => setChosenSize(size)}
-        className={`size${chosenSize === size ? "chosen" : ""}`}
+        className={`size ${chosenSize === size ? "chosen" : ""}`}
       >
         {size}
       </button>

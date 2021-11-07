@@ -1,7 +1,7 @@
 .item {
-  padding: 20px 19px 0px 19px;
+  padding: 15px 19px 10px 19px;
   border-radius: 10px;
-  width: 212px;
+  width: 220px;
   background-color: white;
   margin: 20px 13px;
   overflow: hidden;
@@ -10,9 +10,6 @@
   bottom: 0;
 
   .img-container {
-    display: flex;
-    justify-content: center;
-    width: 212px;
     height: 290px;
   }
 
@@ -22,37 +19,39 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    
   }
   .hover-info {
     z-index: 2;
     display: none;
     position: absolute;
-    bottom: 13px;
-    width: 84.7%;
+    bottom: 17px;
+    left: 20.5px;
+    width: 84%;
     background-color: white;
 
     .sizes {
-      padding-top: 6px;
+      padding-top: 7px;
       font-size: 14px;
-
       .size {
-        width: 24px;
+        width: 29px;
         height: 22px;
-        font-size: 12px;
-        background-color: #ebebeb;
-        border: none;
+        font-size: 11px;
+        color: #252525;
+        background-color: #ebebeb00;
+        border: 1px solid #bdbdbd;
         border-radius: 3px;
-        margin: 0 4px 0 1px;
-        padding: 2px 1px 2px 1px;
-
+        margin: 0 2.5px;
+        transition: all 0.2s ease;
         &:hover {
           cursor: pointer;
-          background-color: rgb(224, 224, 224);
+          border-color: #ffc46c;
+          transform: scale(1.1);
         }
       }
-      .sizechosen {
-        margin-right: 3px;
+      .chosen {
+        border-color: #ffc671;
+        transform: scale(1.1);
+        background-image: linear-gradient(to right, #ffb74b, #ffda82);
       }
     }
   }
@@ -65,10 +64,10 @@
     padding-bottom: 11px;
     z-index: -1;
     position: absolute;
-    bottom: 53px;
+    bottom: 57px;
     left: 0;
     background-color: white;
-    height: 25px;
+    height: 20px;
     width: 100%;
   }
 
@@ -110,17 +109,17 @@
       display: block;
     }
     .price {
-      visibility: hidden;
+      display: none;
     }
     .name {
-      visibility: hidden;
+      display: none;
     }
     .rating {
-      visibility: hidden;
+      display: none;
     }
     .img-slider {
       z-index: 1;
-      bottom: 74.2px;
+      bottom: 83.2px;
       transition: all 0.7s ease-in-out;
     }
   }
