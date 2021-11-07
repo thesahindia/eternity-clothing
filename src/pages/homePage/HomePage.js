@@ -5,6 +5,7 @@ import CollectionGallary from "../../components/collection-gallary/CollectionGal
 import BannerSlider from "../../components/bannerSlider/BannerSlider";
 import OfferHeader from "../../components/offerHeader/OfferHeader";
 import {ReactComponent as TruckIcon} from "../../assets/images/truck.svg"
+import Newsletter from "../../components/newsletter/Newsletter";
 
 
 const HomePage = () => {
@@ -22,6 +23,7 @@ const HomePage = () => {
         <HomepageProducts />
       </div>
       <CollectionGallary />
+      <Newsletter />
     </div>
   );
 };
