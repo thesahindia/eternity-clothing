@@ -1,7 +1,7 @@
-import COLLECTION_DATA from "./collection-data";
-
-const collectionReducer = (state = COLLECTION_DATA, action) => {
+const collectionReducer = (state = {}, action) => {
   switch (action.type) {
+    case "UPDATE_COLLECTIONS":
+      return { ...state, ...action.payload };
     default:
       return state;
   }

@@ -1,10 +1,10 @@
-import products from "./product-data";
-
-const productReducer = (state=products, action) => {
-    switch (action.type) {
-        default:
-        return state;
-    }
-}
+const productReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "UPDATE_PRODUCTS":
+      return { ...state, ...action.payload };
+    default:
+      return state;
+  }
+};
 
 export default productReducer;

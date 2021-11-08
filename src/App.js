@@ -5,10 +5,13 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import firebase, {
   auth,
+  convertCollectionsToObj,
+  convertProductsToObj,
   createUserProfileDoc,
+  firestore,
 } from "./firebase-utils/firebase";
 import AuthenticationPage from "./pages/authenticationPage/AuthenticationPage";
-import { setCurrentUser } from "./redux/actions";
+import { setCurrentUser, upadateCollections, upadateProudcts } from "./redux/actions";
 import checkoutPage from "./pages/checkout/CheckoutPage";
 import CollectionPage from "./pages/collectionPage/CollectionPage";
 import ProductPage from "./pages/productPage/ProductPage";
@@ -16,7 +19,7 @@ import Footer from "./components/footer/Footer";
 
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
-
+console.log("f")
   const dispatch = useDispatch();
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
@@ -33,6 +36,17 @@ const App = () => {
         return;
       }
       dispatch(setCurrentUser(user));
+      
+      const collectionRef = firestore.collection('collections');
+      collectionRef.onSnapshot((snapshot)=> {
+       dispatch(upadateCollections(convertCollectionsToObj(snapshot)))
+      })
+
+      const ProductsRef = firestore.collection('products');
+      ProductsRef.onSnapshot((snapshot)=> {
+       dispatch(upadateProudcts(convertProductsToObj(snapshot)))
+      })
+      
     });
   }, []);
 

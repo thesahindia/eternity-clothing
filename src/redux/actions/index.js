@@ -32,3 +32,17 @@ export const removeFromCart = (id) => {
     payload: id
   }
 }
+
+export const upadateCollections = (collections) => {
+  return {
+    type: "UPDATE_COLLECTIONS",
+    payload: collections
+  }
+}
+
+export const upadateProudcts = (products) => {
+  return {
+    type: "UPDATE_PRODUCTS",
+    payload: products
+  }
+}
