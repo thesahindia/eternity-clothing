@@ -5,21 +5,21 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import firebase, {
   auth,
-  convertCollectionsToObj,
-  convertProductsToObj,
   createUserProfileDoc,
-  firestore,
 } from "./firebase-utils/firebase";
 import AuthenticationPage from "./pages/authenticationPage/AuthenticationPage";
-import { setCurrentUser, upadateCollections, upadateProudcts } from "./redux/actions";
+import {
+  fetchCollectionsStartAsync,
+  fetchProductsStartAsync,
+  setCurrentUser,
+} from "./redux/actions";
 import checkoutPage from "./pages/checkout/CheckoutPage";
-import CollectionPage from "./pages/collectionPage/CollectionPage";
-import ProductPage from "./pages/productPage/ProductPage";
 import Footer from "./components/footer/Footer";
+import CollectionsContainer from "./pages/collectionPage/CollectionPageContainer";
+import ProductPageContainer from "./pages/productPage/ProductPageContainer";
 
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
-console.log("f")
   const dispatch = useDispatch();
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
@@ -36,17 +36,8 @@ console.log("f")
         return;
       }
       dispatch(setCurrentUser(user));
-      
-      const collectionRef = firestore.collection('collections');
-      collectionRef.onSnapshot((snapshot)=> {
-       dispatch(upadateCollections(convertCollectionsToObj(snapshot)))
-      })
-
-      const ProductsRef = firestore.collection('products');
-      ProductsRef.onSnapshot((snapshot)=> {
-       dispatch(upadateProudcts(convertProductsToObj(snapshot)))
-      })
-      
+      dispatch(fetchCollectionsStartAsync());
+      dispatch(fetchProductsStartAsync());
     });
   }, []);
 
@@ -56,18 +47,20 @@ console.log("f")
         <Header />
         <Route path="/" exact component={HomePage} />
         <Route path="/checkout" exact component={checkoutPage} />
-        <Route path="/collections/:collection" component={CollectionPage} />
-        <Route path="/product/:productId" component={ProductPage} />
+        <Route
+          path="/collections/:collection"
+          component={CollectionsContainer}
+        />
+        <Route path="/product/:productId" component={ProductPageContainer} />
         <Route
           exact
           path="/signin"
           render={() =>
             currentUser ? <Redirect to="/" /> : <AuthenticationPage />
           }
-        /> 
+        />
         <Footer />
       </BrowserRouter>
-     
     </div>
   );
 };
