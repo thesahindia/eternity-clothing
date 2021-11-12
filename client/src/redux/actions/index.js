@@ -38,6 +38,12 @@ export const removeFromCart = (id) => {
   };
 };
 
+export const emptyCart = () => {
+  return {
+    type: "EMPTY_CART",
+  };
+};
+
 export const fetchCollectionsStart = () => {
   return {
     type: "FETCH_COLLECTIONS_START",
