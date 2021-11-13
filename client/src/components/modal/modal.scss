@@ -1,0 +1,36 @@
+.overlay {
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background-color: rgba(0, 0, 0, 0.144);
+}
+.modal {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px,
+    rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
+
+    .close-btn {
+        font-size: 18px;
+        padding: 4px 7px;
+        border: none;
+        border-radius: 100%;
+        background-color: transparent;
+        align-self: flex-end;
+        transition: all 0.2s ease;
+        
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(247, 247, 247);
+        }
+    }
+}

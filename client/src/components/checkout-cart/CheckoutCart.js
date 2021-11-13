@@ -1,8 +1,13 @@
 import "./checkoutCart.scss";
 import CheckoutCartItem from "../../components/checkout-cart/Checkout-cartItem";
 import StripeCheckoutButton from "../stripeButton/StripeButton";
+import Modal from "../modal/Modal";
+import SuccessMsg from "../paymentMsg/SuccessMsg";
+import { useState } from "react";
+import FailedMsg from "../paymentMsg/FailedMsg";
 
-export default function CheckoutCart({cartItems, amountToPay}) {
+export default function CheckoutCart({ cartItems, amountToPay }) {
+  const [modalType, setModalType] = useState("");
   return (
     <div className="main-container">
       <div>
@@ -16,9 +21,19 @@ export default function CheckoutCart({cartItems, amountToPay}) {
           ))}
         </div>
         <div className="btn">
-          <StripeCheckoutButton amountToPay={amountToPay} />
+          <StripeCheckoutButton
+            openModal={setModalType}
+            amountToPay={amountToPay}
+          />
         </div>
       </div>
+      <Modal open={modalType} onClose={() => setModalType("")}>
+        {modalType === "success" ? (
+          <SuccessMsg />
+        ) : (
+          <FailedMsg openModal={setModalType} />
+        )}
+      </Modal>
     </div>
   );
 }

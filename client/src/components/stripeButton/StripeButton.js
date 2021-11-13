@@ -3,12 +3,8 @@ import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import CustomButton from "../customButton/CustomButton";
 import { ReactComponent as PackageIcon } from "../../assets/images/package.svg";
-import { useDispatch } from "react-redux";
-import { emptyCart } from "../../redux/actions";
-
-const StripeCheckoutButton = ({ amountToPay }) => {
-  const dispatch = useDispatch()
-  const priceForStripe = amountToPay * 100;
+const StripeCheckoutButton = ({ amountToPay, openModal }) => {
+  const priceForStripe = (amountToPay * 100).toFixed();
   const publishableKey =
     "pk_test_51Jue0kSCtv5oIPfrPJkOieQ5TmzKbMz9x8JqYrV2u13yevt7p4f7WSJtM29jrcitBl9BiETQIeZyakvM0H562MIy00HCUDyt44";
 
@@ -22,14 +18,11 @@ const StripeCheckoutButton = ({ amountToPay }) => {
       },
     })
       .then((response) => {
-        alert("Payment Succesful")
-       dispatch(emptyCart())
+        openModal("success");
       })
       .catch((error) => {
         console.log(error);
-        alert(
-          "Payment failed!! Please try again with the provided test credit card."
-        );
+        openModal("failed");
       });
   };
 

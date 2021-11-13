@@ -1,0 +1,15 @@
+.msg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 220px;
+    padding-top: 10px;
+    background-color: white;
+
+    .msg-text {
+        padding: 12px 0;
+        text-align: center;
+        width: 350px;
+    }
+}
