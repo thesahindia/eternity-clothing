@@ -105,6 +105,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="up-arrow" onClick={()=> window.scroll({ top:0, behavior: 'smooth'})}><span>&#8593;</span> Go to top</div>
       <div className="copyright">Copyright &copy;2021 All rights reserved | Designed by Sahil</div>
     </div>
   );

@@ -89,6 +89,20 @@
       }
     }
   }
+  .up-arrow {
+    color: white;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+
+    span{
+      font-size: 35px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .copyright {
     position: absolute;
     font-weight: 500;

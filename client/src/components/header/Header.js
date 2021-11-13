@@ -3,7 +3,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./header.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 import { ReactComponent as Hr } from "../../assets/images/hr.svg";
-
 import { auth } from "../../firebase-utils/firebase";
 import { useSelector } from "react-redux";
 import CartIcon from "../cart/CartIcon";
@@ -21,12 +20,20 @@ const Header = () => {
         </span>
       </Link>
       <div className="options">
-        <Link to="" className="option">
-          Shop
+        <Link to="/" className="option">
+          Home
         </Link>
-        <Link to="" className="option">
+        <div
+          onClick={() =>
+            window.scroll({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            })
+          }
+          className="option"
+        >
           Contact us
-        </Link>
+        </div>
 
         {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
