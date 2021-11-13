@@ -7,10 +7,16 @@ import Dots from "../slider/Dots";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions";
 import { withRouter } from "react-router-dom";
+import Snackbar from "../snackbar/Snackbar";
 
 const ProductCard = ({ id, name, img, price, rating, sizes, history }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [chosenSize, setChosenSize] = useState(null);
+  const [snackbar, setSnackbar] = useState({
+    hidden: true,
+    msg: "",
+    type: ""
+  })
   const dispatch = useDispatch();
   const indexClick = (index) => {
     setCurrentIndex(index);
@@ -30,7 +36,8 @@ const ProductCard = ({ id, name, img, price, rating, sizes, history }) => {
 
   const handleClick = () => {
     if (!chosenSize) {
-      alert("You've not selected any size!!");
+      setSnackbar({hidden:false, msg:"Oops! You haven't selected any size!!", type:"negative"})
+      setTimeout(()=> setSnackbar({hidden:"true"}), 2300)
       return;
     }
     dispatch(
@@ -42,6 +49,8 @@ const ProductCard = ({ id, name, img, price, rating, sizes, history }) => {
         selectedSize: chosenSize,
       })
     );
+    setSnackbar({hidden:false, msg:"Product added to your cart!", type:"positive"})
+    setTimeout(()=> setSnackbar({hidden:"true"}), 2300)
     setChosenSize(null);
   };
   const onProductPreview = () => {
@@ -49,6 +58,7 @@ const ProductCard = ({ id, name, img, price, rating, sizes, history }) => {
   };
   return (
     <div className="item">
+      <Snackbar {...snackbar} />
       <div className="img-container">
         <div
           onClick={onProductPreview}

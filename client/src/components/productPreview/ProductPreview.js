@@ -8,6 +8,7 @@ import UserReview from "./userReview/UserReview";
 import "./productPreview.scss";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions";
+import Snackbar from "../snackbar/Snackbar";
 
 const ProductPreview = ({ productDetails, id, history }) => {
   const [chosenSize, setChosenSize] = useState(null);
@@ -22,6 +23,11 @@ const ProductPreview = ({ productDetails, id, history }) => {
     description,
     reviews,
   } = productDetails;
+  const [snackbar, setSnackbar] = useState({
+    hidden: true,
+    msg: "",
+    type: ""
+  })
 
   const dispatch = useDispatch();
 
@@ -51,7 +57,8 @@ const ProductPreview = ({ productDetails, id, history }) => {
 
   const onBuyNow = () => {
     if (!chosenSize) {
-      alert("You've not selected any size!!");
+      setSnackbar({hidden:false, msg:"Oops! You haven't selected any size!!", type:"negative"})
+      setTimeout(()=> setSnackbar({hidden:"true"}), 2300)
       return;
     }
     dispatch(
@@ -68,7 +75,8 @@ const ProductPreview = ({ productDetails, id, history }) => {
   };
   const onAddToCart = () => {
     if (!chosenSize) {
-      alert("You've not selected any size!!");
+      setSnackbar({hidden:false, msg:"Oops! You haven't selected any size!!", type:"negative"})
+      setTimeout(()=> setSnackbar({hidden:"true"}), 2300)
       return;
     }
     dispatch(
@@ -80,10 +88,13 @@ const ProductPreview = ({ productDetails, id, history }) => {
         selectedSize: chosenSize,
       })
     );
+    setSnackbar({hidden:false, msg:"Product added to your cart!", type:"positive"})
+    setTimeout(()=> setSnackbar({hidden:"true"}), 2300)
     setChosenSize(null);
   };
   return (
-    <div className="">
+    <div>
+      <Snackbar {...snackbar} />
       <div className="product-preview">
         <div className="img-container">
           <div className="img-options">{renderImgOptions}</div>
