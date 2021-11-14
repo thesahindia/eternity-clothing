@@ -5,10 +5,10 @@ export default function UserReview({ reviews, rating }) {
   const renderReviews = reviews.map(
     ({ name, img, rating, time, date, review }) => {
       return (
-        <div className="review-container">
+        <div key={name} className="review-container">
           <div className="user-info">
             <div className="profile-img">
-              <img src={img} />
+              <img src={img} alt=" " />
             </div>
             <div className="right-section">
               <div className="user-name">{name}</div>

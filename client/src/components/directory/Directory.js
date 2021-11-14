@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DirectoryItem from "./DirectoryItem";
 
 const Directory = () => {
-  const [sections, setSections] = useState([
+  const [sections] = useState([
     {
       id: 1,
       title: "Casual T-Shirts",

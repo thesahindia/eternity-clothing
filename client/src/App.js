@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import Header from "./components/header/Header";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import firebase, {
+import{
   auth,
   createUserProfileDoc,
 } from "./firebase-utils/firebase";
@@ -21,6 +21,7 @@ import ProductPageContainer from "./pages/productPage/ProductPageContainer";
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();
+
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
       const userRef = await createUserProfileDoc(user);
@@ -36,10 +37,10 @@ const App = () => {
         return;
       }
       dispatch(setCurrentUser(user));
-      dispatch(fetchCollectionsStartAsync());
-      dispatch(fetchProductsStartAsync());
     });
-  }, []);
+    dispatch(fetchCollectionsStartAsync());
+      dispatch(fetchProductsStartAsync());
+  }, [dispatch]);
 
   return (
     <div>

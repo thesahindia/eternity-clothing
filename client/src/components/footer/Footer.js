@@ -90,16 +90,16 @@ export default function Footer() {
           </div>
           <div className="contact-number">+91 923504XXX</div>
           <div className="social-media">
-            <a  target="_blank" href="https://www.facebook.com">
+            <a  target="_blank" rel="noreferrer" href="https://www.facebook.com">
               <FacebookIcon />
             </a>
-            <a target="_blank" href="https://www.twitter.com">
+            <a target="_blank" rel="noreferrer" href="https://www.twitter.com">
               <TwitterIcon />
             </a>
-            <a target="_blank" href="https://www.instagram.com">
+            <a target="_blank" rel="noreferrer" href="https://www.instagram.com">
               <InstagramIcon />
             </a>
-            <a  target="_blank" href="https://www.github.com">
+            <a  target="_blank" rel="noreferrer" href="https://www.github.com">
               <GithubIcon />
             </a>
           </div>

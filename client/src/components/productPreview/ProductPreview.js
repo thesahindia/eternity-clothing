@@ -33,7 +33,7 @@ const ProductPreview = ({ productDetails, id, history }) => {
 
   const renderImgOptions = img.map(({ url }, i) => {
     return (
-      <div
+      <div key={url}
         onClick={() => setImgIndex(i)}
         className={`img-option ${i === imgIndex ? "active-option" : ""}`}
         style={{

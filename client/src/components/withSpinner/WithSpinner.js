@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./withSpinner.scss";
 
 export default function WithSpinner(WrappedComponent) {
   const Spinner = ({ isLoading, ...otherProps }) => {
-    
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
