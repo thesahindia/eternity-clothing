@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
 .products-preview {
   display: flex;
   flex-direction: column;
@@ -5,18 +7,19 @@
   margin-bottom: 30px;
 
   .heading {
+    font-family: 'Ubuntu', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin: 25px 0 66px 0;
+    margin: 25px 0 60px 0;
 
     h1 {
       font-size: 36px;
       margin: 0;
     }
 
-    .hr{
+    .hr {
       margin-top: 2px;
       width: 55px;
       height: 4px;
@@ -24,10 +27,4 @@
       background-color: #ffad31;
     }
   }
-
-  .preview {
-    display: flex;
-    justify-content: center;
-  }
 }
-

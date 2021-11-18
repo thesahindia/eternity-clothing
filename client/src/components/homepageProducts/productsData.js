@@ -23,7 +23,6 @@ const PRODUCTS_DATA = [
           { url: "jeans/o.3.jpg" },
         ],
       },
-
       {
         id: 46,
         name: "Men's Denim Jacket",
@@ -44,7 +43,6 @@ const PRODUCTS_DATA = [
           { url: "t-shirts/b.3.jpg" },
         ],
       },
-
       {
         id: 20,
         name: "Men's Slim Fit Jean",
@@ -56,6 +54,50 @@ const PRODUCTS_DATA = [
           { url: "jeans/e.2.jpg" },
           { url: "jeans/e.3.jpg" },
         ],
+      },
+      {
+        id: 50,
+        img: [{ url: "jackets/j.1.jpg" }, { url: "jackets/j.2.jpg" }],
+        name: "Men's Rugged Dakota Jacket",
+        price: { fraction: "99", whole: "59" },
+        rating: 4.5,
+        sizes: ["S", "M", "L", "XL"],
+      },
+      {
+        id: 70,
+        img: [
+          { url: "others/a.1.jpg" },
+          { url: "others/a.2.jpg" },
+          { url: "others/a.3.jpg" },
+        ],
+        name: "Athletic Jogger Pants",
+        price: { fraction: "35", whole: "29" },
+        rating: 4.5,
+        sizes: ["S", "M", "L", "XL"],
+      },
+      {
+        id: 45,
+        img: [
+          { url: "jackets/e.1.jpg" },
+          { url: "jackets/e.2.jpg" },
+          { url: "jackets/e.3.jpg" },
+        ],
+        name: "Insulated Hooded Jacket",
+        price: { fraction: "33", whole: "47" },
+        rating: 4.5,
+        sizes: ["S", "M", "L"],
+      },
+      {
+        id: 31,
+        img: [
+          { url: "hoodies/a.1.jpg" },
+          { url: "hoodies/a.2.jpg" },
+          { url: "hoodies/a.3.jpg" },
+        ],
+        name: "Champion Men's Hoodie",
+        price: { fraction: "95", whole: "21" },
+        rating: 4.5,
+        sizes: ["S", "M", "L", "XL"],
       },
     ],
   },
@@ -83,7 +125,7 @@ const PRODUCTS_DATA = [
         rating: 4.5,
         img: [{ url: "jeans/h.1.jpg" }, { url: "jeans/h.2.jpg" }],
       },
-  {
+      {
         id: 76,
         name: "Men's Floral Hawaiian Shirt",
         price: { whole: "22", fraction: "99" },
@@ -91,16 +133,38 @@ const PRODUCTS_DATA = [
         sizes: ["S", "M", "L"],
         img: [{ url: "others/h.1.jpg" }, { url: "others/h.2.jpg" }],
       },
-
       {
-        id: 51,
-        name: "Qulited Flanned Lined Jacket",
-        price: { whole: "55", fraction: "00" },
-        sizes: ["S", "M", "L", "XL"],
+        id: 72,
+        img: [{ url: "others/c.1.jpg" }, { url: "others/c.2.jpg" }],
+        name: "Men's Active Jogger Pants",
+        price: { fraction: "99", whole: "31" },
         rating: 5,
-        img: [{ url: "jackets/k.1.jpg" }, { url: "jackets/k.2.jpg" }],
+        sizes: ["S", "M", "L"],
       },
-
+      {
+        id: 32,
+        img: [
+          { url: "hoodies/b.1.jpg" },
+          { url: "hoodies/b.2.jpg" },
+          { url: "hoodies/b.3.jpg" },
+        ],
+        name: "Men's Athletic Hoodie",
+        price: { fraction: "99", whole: "20" },
+        rating: 5,
+        sizes: ["S", "M", "L"],
+      },
+      {
+        id: 20,
+        name: "Men's Slim Fit Jean",
+        price: { whole: "24", fraction: "99" },
+        sizes: [28, 29, 30, 32],
+        rating: 4.5,
+        img: [
+          { url: "jeans/e.1.jpg" },
+          { url: "jeans/e.2.jpg" },
+          { url: "jeans/e.3.jpg" },
+        ],
+      },
       {
         id: 44,
         name: "Lightweight Bomber Jacket",
@@ -108,6 +172,26 @@ const PRODUCTS_DATA = [
         sizes: ["S", "M", "L", "XL"],
         rating: 5,
         img: [{ url: "jackets/d.1.jpg" }, { url: "jackets/d.2.jpg" }],
+      },
+      {
+        id: 78,
+        img: [
+          { url: "others/g.1.jpg" },
+          { url: "others/g.2.jpg" },
+          { url: "others/g.3.jpg" },
+        ],
+        name: "Men's Perfect Fit Shorts",
+        price: { fraction: "99", whole: "24" },
+        rating: 4.5,
+        sizes: ["S", "M", "L"],
+      },
+      {
+        id: 51,
+        name: "Qulited Flanned Lined Jacket",
+        price: { whole: "55", fraction: "00" },
+        sizes: ["S", "M", "L", "XL"],
+        rating: 5,
+        img: [{ url: "jackets/k.1.jpg" }, { url: "jackets/k.2.jpg" }],
       },
     ],
   },
