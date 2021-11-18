@@ -26,8 +26,7 @@ const CartDropdown = ({ history }) => {
   
   return (
     <div
-      style={{ visibility: isCartHidden ? "hidden" : "" }}
-      className="cart-dropdown"
+      className={`cart-dropdown ${isCartHidden? "": "show-cart"}`}
     >
       {cartItems.length ? (
         <div>

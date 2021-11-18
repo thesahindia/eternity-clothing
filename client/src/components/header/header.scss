@@ -48,6 +48,10 @@
       margin-right: 25px;
       text-decoration: none;
       color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
