@@ -9,7 +9,6 @@ const SponsoredProduct = ({ history }) => {
   const state = useSelector((state) => state);
   const { products } = selectCollection("sponsored")(state);
   const product = products[Math.floor(Math.random() * 4)];
-
   const handleClick = () => {
     history.push(`/product/${product.id}`);
   };
@@ -30,8 +29,8 @@ const SponsoredProduct = ({ history }) => {
           }}
         ></div>
         <div className="product-details">
-          <div className="name">Levi's Men's Casual Light Shirt </div>
-          <div className="price">$34.99</div>
+          <div className="name">{product.name}</div>
+          <div className="price">&#36;{product.price.whole}.{product.price.fraction}</div>
           <div>
             <CustomButton
               btn="primary"
