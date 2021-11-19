@@ -8,6 +8,7 @@ import "./index.css";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import thunk from "redux-thunk";
+import * as serviceWorker from "./serviceWorker"
 
 const store = createStore(reducer, applyMiddleware(thunk));
 const persistor = persistStore(store);
@@ -20,3 +21,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+serviceWorker.register();

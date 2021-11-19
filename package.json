@@ -17,7 +17,9 @@
     "cors": "2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.17.1",
-    "stripe": "^8.186.1"
+    "express-sslify": "^1.2.0",
+    "stripe": "^8.186.1",
+    "workbox-window": "^6.4.1"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
