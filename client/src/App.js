@@ -17,7 +17,7 @@ import checkoutPage from "./pages/checkout/CheckoutPage";
 import Footer from "./components/footer/Footer";
 import CollectionsContainer from "./pages/collectionPage/CollectionPageContainer";
 import ProductPageContainer from "./pages/productPage/ProductPageContainer";
-
+import 'aos/dist/aos.css';
 const App = () => {
   const currentUser = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();

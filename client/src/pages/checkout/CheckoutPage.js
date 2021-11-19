@@ -13,8 +13,16 @@ import {
   selectSavedAmount,
 } from "../../redux/reducers/cart/cartSelectors";
 import { createStructuredSelector } from "reselect";
+import { useEffect } from "react";
+import aos from "aos";
 
 export default function CheckoutPage() {
+  useEffect(() => {
+    aos.init({
+      duration: 1000,
+    });
+  }, []);
+
   const {
     cartItems,
     itemsCount,
@@ -38,16 +46,19 @@ export default function CheckoutPage() {
     <div className="checkout-page">
       {itemsCount ? (
         <>
-          <CheckoutCart cartItems={cartItems} amountToPay={amountToPay} />
-          <PriceDetails
-            itemsCount={itemsCount}
-            subtotal={subtotal}
-            discount={discount}
-            deliveryCharges={deliveryCharges}
-            amountToPay={amountToPay}
-            savedAmount={savedAmount}
-          />
-         
+          <div data-aos="fade-right" className="checkout-left">
+            <CheckoutCart cartItems={cartItems} amountToPay={amountToPay} />
+          </div>
+          <div data-aos="fade-left" className="checkout-right">
+            <PriceDetails
+              itemsCount={itemsCount}
+              subtotal={subtotal}
+              discount={discount}
+              deliveryCharges={deliveryCharges}
+              amountToPay={amountToPay}
+              savedAmount={savedAmount}
+            />
+          </div>
         </>
       ) : (
         <div className="empty_cart">

@@ -1,10 +1,15 @@
-import React from "react";
+import aos from "aos";
+import React, { useEffect} from "react";
 import ProductSlider from "../productSlider/ProductSlider";
 import "./homepageProductsPreview.scss";
 const HomepageProductsPreview = ({ title, items }) => {
-
+useEffect(() => {
+  aos.init({
+    duration: 1000,
+  });
+}, []);
   return (
-    <div className="products-preview">
+    <div data-aos="fade-up" className="products-preview">
       <div className="heading">
         <h1>{title}</h1>
         <div className="hr"></div>

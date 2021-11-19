@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Rating from "../productCard/Rating";
 import CustomButton from "../customButton/CustomButton";
 import { ReactComponent as CartIcon } from "../../assets/images/cartIcon.svg";
@@ -9,8 +9,14 @@ import "./productPreview.scss";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions";
 import Snackbar from "../snackbar/Snackbar";
+import aos from "aos";
 
 const ProductPreview = ({ productDetails, id, history }) => {
+  useEffect(()=> {
+    aos.init({
+      duration: 1000,
+    });
+  })
   const [chosenSize, setChosenSize] = useState(null);
   const [imgIndex, setImgIndex] = useState(0);
   const {
@@ -96,7 +102,7 @@ const ProductPreview = ({ productDetails, id, history }) => {
     <div>
       <Snackbar {...snackbar} />
       <div className="product-preview">
-        <div className="img-container">
+        <div data-aos="fade-right" className="img-container">
           <div className="img-options">{renderImgOptions}</div>
           <div className="main-img-container">
             <div
@@ -109,7 +115,7 @@ const ProductPreview = ({ productDetails, id, history }) => {
             ></div>
           </div>
         </div>
-        <div className="product-info">
+        <div data-aos="fade-left" className="product-info">
           <div className="product-name">{name}</div>
           <div className="product-price">
             {`$${price.whole}.${price.fraction}`}

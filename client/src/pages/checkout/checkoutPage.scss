@@ -3,6 +3,14 @@
   padding: 42px 34px 80px 34px;
   min-height: 100vh;
   background-color: #f0f3f6;
+
+  .checkout-left {
+    width: 65%;
+    margin-right: 2%;
+  }
+  .checkout-right {
+    width: 33%;
+  }
 }
 
 .empty_cart {
