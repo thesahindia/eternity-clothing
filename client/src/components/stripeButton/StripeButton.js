@@ -4,7 +4,7 @@ import axios from "axios";
 import CustomButton from "../customButton/CustomButton";
 import { ReactComponent as PackageIcon } from "../../assets/images/package.svg";
 const StripeCheckoutButton = ({ amountToPay, openModal }) => {
-  const priceForStripe = (amountToPay * 100).toFixed();
+  const priceForStripe = Number((amountToPay * 100).toFixed());
   const publishableKey =
     "pk_test_51Jue0kSCtv5oIPfrPJkOieQ5TmzKbMz9x8JqYrV2u13yevt7p4f7WSJtM29jrcitBl9BiETQIeZyakvM0H562MIy00HCUDyt44";
 
